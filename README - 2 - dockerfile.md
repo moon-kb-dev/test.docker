@@ -29,9 +29,19 @@ EXPOSE 443
 ```
 docker build --tag hello:0.1 .  
 ```
-- run : 生成したimageから実行
+- run : 生成したimageからnginx container実行
+- options : -d, -p 
 - ホストのフォルダを事前にシェアして置く：\/tmp\/root\/data
 ```
 docker run --name hello-ubuntu-nginx -d -p 44480:80 -v /tmp/root/data:/data hello:0.1
 ```
-- http://localhost:44480/
+- localhost 接続確認
+```
+http://localhost:44480/
+```
+- run : 生成したimageからubuntu container実行
+- options : -i, -t
+```
+docker run -it --name hello-ubuntu -v /tmp/root/data:/data hello:0.1 /bin/bash
+#
+```
