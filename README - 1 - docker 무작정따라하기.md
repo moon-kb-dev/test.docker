@@ -45,36 +45,36 @@ docker ps -aq
 
 
 ## container状況関連
-- docker <命令文> <container名 or contatiner ID or image名>
--- start : stop -> start
+*docker <命令文> <container名 or contatiner ID or image名>*
+- start : stop -> start
 ```
 docker start hello
 ```
--- restart
+- restart
 ```
 docker restart hello
 ```
--- attach : 実行中のcontainerに再接続
+- attach : 実行中のcontainerに再接続
 ```
 docker attach hello
 ```
--- exec : 実行中のcontainerに命令文書く
+- exec : 実行中のcontainerに命令文書く
 ```
 docker exec hello echo 'Hello world'
 docker exec hello apt0get .....
 docker exec hello yum -y ...
 ```
--- stop
+- stop
 ```
 docker stop hello
 ```
--- rm : container削除
+- rm : container削除
 ```
 docker rm hello
 docker rm -f hello
 docker rm -f $(docker ps -aq)
 ```
--- rmi : image削除
+- rmi : image削除
 ```
 docker rmi ubuntu:latest
 docker rmi ubuntu
