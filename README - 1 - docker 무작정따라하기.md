@@ -17,8 +17,10 @@ docker search redis
 - タグ名＝バージョン
 
 ```
+docker pull centos
 docker pull ubuntu:latest
 docker pull ubuntu:14.04
+docker pull httpd:latest
 ```
 
 ## pullしたimageリスト表示
@@ -33,6 +35,8 @@ docker images ubuntu
 ```
 docker run -it ubuntu:latest /bin/bash
 docker run -ti --name hello ubuntu:latest /bin/bash
+docker run -ti --name centos centos:latest
+docker run -d -p 80:80 --name httpd-latest httpd:latest
 ```
 
 ## 生成したcontainerリスト表示
@@ -41,8 +45,11 @@ docker run -ti --name hello ubuntu:latest /bin/bash
 docker ps
 docker ps -a -q
 docker ps -aq
-```
 
+curl http://localhost:80/index.html
+
+docker logs -f httpd
+```
 
 ## container状況関連
 *docker <命令文> <container名 or contatiner ID or image名>*
